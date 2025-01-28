@@ -1,14 +1,32 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("HelloSAsss, " + name + "!")
+data class Cliente(var nombre : String, var domicilio : String)
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+
+
+data class Compra( var cliente : String, var dia : Int, var monto : Double)
+
+
+
+data class Domicilio(var calle : String, var numero : Int){
+    fun dirCompleta() : String{
+        return "El domicilio, su calle es $calle y su numero es el $numero"
     }
+}
+
+class RepositorioCompras(){
+
+    fun agregarCompra(compra : Compra) : List<Compra>{
+        var listaCompra = mutableListOf<Compra>()
+        listaCompra.add(compra)
+
+        return listaCompra
+    }
+
+    fun retornarDomicilio(domicilio : Domicilio){
+        println(domicilio)
+    }
+}
+
+
+
+fun main() {
 }
