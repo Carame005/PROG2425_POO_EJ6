@@ -21,12 +21,21 @@ class RepositorioCompras(){
         return listaCompra
     }
 
-    fun retornarDomicilio(domicilio : Domicilio){
-        println(domicilio)
+    fun retornarDomicilio(domicilio: List<List<String>>): Set<String> {
+        val domiciliosRetornados = mutableSetOf<String>()
+
+        for (compra in domicilio) {
+            if (compra.size > 3) {
+                domiciliosRetornados.add(compra[3])
+            }
+        }
+        return domiciliosRetornados
     }
+
 }
 
 
 
 fun main() {
+
 }
